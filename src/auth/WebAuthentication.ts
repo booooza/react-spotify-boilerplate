@@ -2,7 +2,7 @@ import autobind from 'autobind-decorator';
 import history from '../utils/history';
 import { AUTH_CONFIG } from './configuration';
 import { Auth0Authentication } from './Auth0Authentication';
-import { Auth0DecodedHash, Auth0Error, WebAuth } from 'auth0-js';
+import { Auth0DecodedHash, WebAuth } from 'auth0-js';
 /**
  * Web based Auth0 authentication
  *
@@ -62,9 +62,9 @@ export class WebAuthentication implements Auth0Authentication {
             console.log(result)
             if (result && result.accessToken) {
                 this.setSession(result);
-                history.replace('/home');
+                history.replace('/');
             } else if (error) {
-                history.replace('/home');
+                history.replace('/');
                 // tslint:disable-next-line:no-console
                 console.error(error);
                 alert(`Error: ${error}. Check the console for further details.`);
@@ -89,7 +89,7 @@ export class WebAuthentication implements Auth0Authentication {
         localStorage.setItem('expires_at', expiresAt);
         localStorage.setItem('scopes', JSON.stringify(scopes));
         // navigate to the home route
-        history.replace('/home');
+        history.replace('/');
     }
 
     @autobind
@@ -99,7 +99,7 @@ export class WebAuthentication implements Auth0Authentication {
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
         // navigate to the home route
-        history.replace('/home');
+        history.replace('/');
     }
 
     @autobind

@@ -2,11 +2,13 @@ import autobind from 'autobind-decorator';
 import React, { Component } from 'react';
 import { Auth0Authentication } from '../../auth/Auth0Authentication';
 import { NavLink } from 'react-router-dom';
+import { SpotifyApiContext } from './node_modules/react-spotify-api'
 import './App.css';
 
 export interface AppProps {
     auth: Auth0Authentication;
 }
+
 class App extends Component<AppProps, {}> {
     @autobind
     login() {
@@ -35,10 +37,10 @@ class App extends Component<AppProps, {}> {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link"
-                                to="/profile"
+                                to="/user"
                                 activeClassName="active"
                             >
-                                Profile
+                                User
               </NavLink>
                         </li>
                     )}

@@ -1,5 +1,6 @@
-import App from './App/App';
+import Nav from './Nav/Nav';
 import Callback from './Callback/Callback';
 import Home from './Home/Home';
+import User from './User/User';
 
-export { App, Callback, Home };
+export { Nav, Callback, Home, User };
