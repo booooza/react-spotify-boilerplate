@@ -24,7 +24,7 @@ class Nav extends Component<NavProps, {}> {
         return (
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <NavLink className="navbar-brand" to="/">
-                    Playlist Organizer
+                    Spotify Web API React Boilerplate
         </NavLink>
                 <ul className="navbar-nav mr-auto">
                     {/* {authenticated && (

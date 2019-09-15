@@ -59,7 +59,6 @@ export class WebAuthentication implements Auth0Authentication {
     @autobind
     handleAuthentication(): void {
         this.auth0.parseHash((error: any, result: any) => {
-            console.log(result)
             if (result && result.accessToken) {
                 this.setSession(result);
                 history.replace('/');

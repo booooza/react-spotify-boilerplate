@@ -1,3 +1,20 @@
+# Spotify Web API React Boilerplate
+React boilerplate for building applications based on the Spotify Web API. The example includes OAuth2 authorization and fetching user data from Spotify
+
+## Based on
+* [React](https://github.com/facebook/react)
+* [auth0.js](https://github.com/auth0/auth0.js)
+* [Typescript](https://www.typescriptlang.org/)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [Spotify Web API](https://developer.spotify.com/documentation/web-api)
+* [React Spotify Api](https://idanlo.github.io/react-spotify-api/)
+
+## Authorization
+The boilerplate uses OAuth 2.0 implicit grant flow which is for clients that are implemented entirely using JavaScript and running in the resource owner’s browser. [Register your app](https://developer.spotify.com/documentation/general/guides/app-settings/#register-your-app) to receive a client id which should be placed in `src/auth/configuration.ts`.
+
+![Spotify Implicit Grant Flow](AuthG_ImplicitGrant.png "Spotify Implicit Grant Flow")
+
+## Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
