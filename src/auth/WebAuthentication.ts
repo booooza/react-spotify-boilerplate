@@ -61,7 +61,7 @@ export class WebAuthentication implements Auth0Authentication {
         this.auth0.parseHash((error: any, result: any) => {
             if (result && result.accessToken) {
                 this.setSession(result);
-                history.replace('/');
+                history.replace('/playlists');
             } else if (error) {
                 history.replace('/');
                 // tslint:disable-next-line:no-console
@@ -73,7 +73,7 @@ export class WebAuthentication implements Auth0Authentication {
 
     @autobind
     setSession(authResult: Auth0DecodedHash): void {
-        const { accessToken, expiresIn, idToken, scope } = authResult;
+        const { accessToken, expiresIn, scope } = authResult;
         // Set the time that the access token will expire at
         let expiresAt = JSON.stringify(expiresIn! * 1000 + new Date().getTime());
         // If there is a value on the `scope` param from the authResult,
@@ -82,9 +82,7 @@ export class WebAuthentication implements Auth0Authentication {
         // set it to nothing
         // tslint:disable-next-line:no-string-literal
         const scopes = scope || this.requestedScopes || '';
-        // const scopes = authResult.scope || this.requestedScopes || '';
         localStorage.setItem('access_token', accessToken!);
-        localStorage.setItem('id_token', idToken!);
         localStorage.setItem('expires_at', expiresAt);
         localStorage.setItem('scopes', JSON.stringify(scopes));
         // navigate to the home route
@@ -95,7 +93,6 @@ export class WebAuthentication implements Auth0Authentication {
     logout(): void {
         // Clear access token and ID token from local storage
         localStorage.removeItem('access_token');
-        localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
         // navigate to the home route
         history.replace('/');

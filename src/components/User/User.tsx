@@ -7,47 +7,26 @@ export interface UserProps {
 }
 
 /**
- * Contrat for state
- * @export
- * @interface UserState
- */
-export interface UserState {
-    id: string,
-    displayName: string;
-}
-
-/**
  * @public
  * @export
  * @class User
  * @extends {Component<UserProps, UserState>}
  */
-class User extends Component<any, UserState> {
-    state: UserState = {
-        id: '',
-        displayName: '',
-    };
+class User extends Component<UserProps> {
 
     render() {
         const { authenticated } = this.props.auth;
         return (
-            <div className="container">
-                {authenticated && this.props.auth.accessToken && (
-                    <SpotifyApiContext.Provider value={this.props.auth.accessToken}>
-                        <SpotifyUser>
-                            {(user, loading, error) =>
-                                user ? (
-                                    <ul>
-                                        <li>Name: {user.display_name}</li>
-                                        <li>ID: {user.id}</li>
-                                    </ul>
-                                ) : null
-                            }
-                        </SpotifyUser>
-                    </SpotifyApiContext.Provider>
+            authenticated && this.props.auth.accessToken && (
+                <SpotifyApiContext.Provider value={this.props.auth.accessToken}>
+                    <SpotifyUser>
+                        {(user, loading, error) =>
+                            user ? user.display_name : null
+                        }
+                    </SpotifyUser>
+                </SpotifyApiContext.Provider>
 
-                )}
-            </div>
+            )
         );
     }
 }

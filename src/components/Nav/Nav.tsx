@@ -25,32 +25,19 @@ class Nav extends Component<NavProps, {}> {
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <NavLink className="navbar-brand" to="/">
                     Spotify Web API React Boilerplate
-        </NavLink>
+                </NavLink>
                 <ul className="navbar-nav mr-auto">
-                    {/* {authenticated && (
+                    {authenticated && (
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link"
-                                to="/user"
-                                activeClassName="active"
-                            >
-                                User
-              </NavLink>
-                        </li>
-                    )} */}
-                </ul>
-                <ul className="navbar-nav ml-auto">
-                    {!authenticated && (
-                        <li className="nav-item">
-                            <button
-                                className="btn btn-outline-primary my-2 my-sm-0"
-                                type="submit"
-                                onClick={this.login}
-                            >
-                                Log In
-              </button>
+                                to="/playlists">
+                                Playlists
+                            </NavLink>
                         </li>
                     )}
+                </ul>
+                <ul className="navbar-nav ml-auto">
                     {authenticated && (
                         <li className="nav-item">
                             <button
@@ -59,7 +46,7 @@ class Nav extends Component<NavProps, {}> {
                                 onClick={this.logout}
                             >
                                 Log Out
-              </button>
+                            </button>
                         </li>
                     )}
                 </ul>
