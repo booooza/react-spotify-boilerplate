@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Routes from './utils/Routes';
+require('dotenv').config();
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 

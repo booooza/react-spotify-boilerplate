@@ -9,17 +9,17 @@ export interface Auth0Config {
      * @type {string}
      * @memberof Auth0Config
      */
-    domain: string;
+    domain: string | undefined;
     /**
      * @property
      * @type {string}
      * @memberof Auth0Config
      */
-    clientId: string;
+    clientId: string | undefined;
     /**
      * @property
      * @type {string}
      * @memberof Auth0Config
      */
-    callbackUrl: string;
+    callbackUrl: string | undefined;
 }

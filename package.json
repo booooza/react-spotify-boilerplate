@@ -6,6 +6,7 @@
     "auth0-js": "^9.11.3",
     "autobind-decorator": "^2.4.0",
     "bootstrap": "^4.3.1",
+    "dotenv": "^8.1.0",
     "history": "^4.10.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -15,6 +16,7 @@
     "typescript": "3.6.3"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/auth0-js": "^9.10.6",
     "@types/history": "^4.7.3",
     "@types/jest": "24.0.18",

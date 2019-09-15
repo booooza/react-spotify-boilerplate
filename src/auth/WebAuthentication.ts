@@ -37,9 +37,9 @@ export class WebAuthentication implements Auth0Authentication {
      * @memberof WebAuthenticationManager
      */
     auth0: WebAuth = new WebAuth({
-        domain: AUTH_CONFIG.domain,
-        clientID: AUTH_CONFIG.clientId,
-        redirectUri: AUTH_CONFIG.callbackUrl,
+        domain: AUTH_CONFIG.domain ? AUTH_CONFIG.domain : '',
+        clientID: AUTH_CONFIG.clientId ? AUTH_CONFIG.clientId : '',
+        redirectUri: AUTH_CONFIG.callbackUrl ? AUTH_CONFIG.callbackUrl : '',
         responseType: 'token',
         scope: this.requestedScopes,
     });
