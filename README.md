@@ -9,7 +9,7 @@ React boilerplate for building applications based on the Spotify Web API. The ex
 * [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 * [React Spotify Api](https://idanlo.github.io/react-spotify-api/)
 
-## Authorization
+## Authorization
 The boilerplate uses OAuth 2.0 implicit grant flow which is for clients that are implemented entirely using JavaScript and running in the resource owner’s browser. [Register your app](https://developer.spotify.com/documentation/general/guides/app-settings/#register-your-app) to receive a client id which should be placed in `src/auth/configuration.ts`.
 
 ![Spotify Implicit Grant Flow](AuthG_ImplicitGrant.png "Spotify Implicit Grant Flow")
